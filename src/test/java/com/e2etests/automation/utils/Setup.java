@@ -35,10 +35,11 @@ public class Setup {
 		}
 		switch (browser) {
 		case "chrome":
-			System.setProperty("webdriver.chrome.driver", "src/test/resource/drivers/win/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/test/resource/drivers/win/chromedriver1.exe");
 			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("('start-maximized')");
 			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			chromeOptions.addArguments("('start-maximized')");
 			break;
 		case "firefox":
 			System.setProperty("webdriver.gecko.driver", "src/test/resource/drivers/win/geckodriver.exe");
